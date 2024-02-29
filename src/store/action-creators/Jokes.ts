@@ -6,6 +6,9 @@ import { JokesAction, JokesActionTypes } from 'store/types'
 export const getJokes = (value: string) => {
   return async (dispatch: Dispatch<JokesAction>) => {
     try {
+      if (value.length < 3) {
+        throw new Error('')
+      }
       const data = await getJokesQuery(value)
       dispatch({
         type: JokesActionTypes.SET_JOKES_DATA,

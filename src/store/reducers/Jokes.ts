@@ -24,7 +24,7 @@ export const jokes = (state = initialState, action: JokesAction): StateTyp => {
     case JokesActionTypes.LOADING_START:
       return { ...state, isLoading: true }
     case JokesActionTypes.FETCH_USER_ERROR:
-      return { ...state, isLoading: true }
+      return { ...initialState }
     default:
       return state
   }
